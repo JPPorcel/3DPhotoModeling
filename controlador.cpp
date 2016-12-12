@@ -7,7 +7,7 @@ Tupla3f Controlador::colorZ = tupla3f(0,0,1);
 
 Controlador::Controlador()
 {
-    src = "/home/juanpi/QtProjects/project/images/cubo.jpg";
+    src = "./images/cubo.jpg";
 
     leftButtonPressed = false;
 
@@ -1029,14 +1029,14 @@ void Controlador::wheelEvent(QWheelEvent *event)
     /*
     if (modelo != NULL)
     {
-        if(modelo->isSelecc() && event->orientation() == Qt::Orientation::Vertical)
+        if(modelo->isSelecc() && event->orientation() == Qt::Vertical)
         {
             modelo->escalar(event->delta()*0.001);
         }
     }
     */
 
-    if(event->orientation() == Qt::Orientation::Vertical && modo == MODO_REVOLUCION)
+    if(event->orientation() == Qt::Vertical && modo == MODO_REVOLUCION)
     {
         if(event->delta() > 0)
             ejeMayor += 1;
@@ -1063,7 +1063,7 @@ void Controlador::wheelEvent(QWheelEvent *event)
             ((Cilindro*)figuras[indiceFigura])->deleteElipse(1);
         }
     }
-    else if(event->orientation() == Qt::Orientation::Vertical && modo == MODO_CUBOIDE)
+    else if(event->orientation() == Qt::Vertical && modo == MODO_CUBOIDE)
     {
         double f = ((Cuboide*)figuras[indiceFigura])->getFactor();
         if(event->delta() > 0)
