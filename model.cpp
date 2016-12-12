@@ -569,16 +569,23 @@ void Model::mover(Tupla3f m)
 void Model::exportarPLY(std::string path)
 {
     string p = path;
-    int n = p.find_last_of('/');
+    int n = p.find_last_of('/') + 1;
     p = p.substr(n);
-    cout << p << endl;
-    cv::imwrite("textura.png", material.getTextura()->getImagen());
+    p.resize(p.size()-4);
+    string name = path;
+    name = name.substr(0, n);
+    name = name + p + ".png";
+    cout << name << endl;
+    cv::Mat m;
+    material.getTextura()->getImagen().copyTo(m);
+    cv::flip(m, m, 0);
+    cv::imwrite(name, m);
 
     ofstream out(path.c_str());
 
     out << "ply" << endl;
     out << "format ascii 1.0" << endl;
-    out << "comment TextureFile textura.png" << endl;
+    out << "comment TextureFile " << p << ".png" << endl;
     out << "element vertex " << vertices.size() << endl;
     out << "property float x" << endl;
     out << "property float y" << endl;
@@ -587,7 +594,7 @@ void Model::exportarPLY(std::string path)
     out << "property float t // v" << endl;
     out << "element face " << caras.size() << endl;
     out << "property list uchar uint vertex_indices" << endl;
-    out << "property list uchar float texcoord" << endl;
+    //out << "property list uchar float texcoord" << endl;
     out << "end_header" << endl;
 
     for(int i=0; i<vertices.size(); i++)
@@ -598,11 +605,12 @@ void Model::exportarPLY(std::string path)
 
     for(int i=0; i<caras.size(); i++)
     {
-        out << 3 << " " << caras[i].idx[0] << " " << caras[i].idx[1] << " " << caras[i].idx[2] << " " << 6 << " ";
-        for(int k=0; k<3; k++)
+        out << 3 << " " << caras[i].idx[0] << " " << caras[i].idx[1] << " " << caras[i].idx[2]; //<< " " << 6 << " ";
+        /*for(int k=0; k<3; k++)
         {
             out << coordTex[caras[i].idx[k]].first << " " << coordTex[caras[i].idx[k]].second << " ";
         }
+        */
         out << endl;
     }
 
