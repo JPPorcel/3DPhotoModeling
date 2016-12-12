@@ -241,7 +241,7 @@ void MyGLWidget::wheelEvent(QWheelEvent *event)
 
 void MyGLWidget::openJpg()
 {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Importar imagen jpg"), "", tr("JPG Files (*.jpg)"));
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Importar imagen jpg"), "./images", tr("JPG Files (*.jpg)"));
 
     controlador->setImage(fileName.toStdString());
     updateGL();
@@ -249,7 +249,7 @@ void MyGLWidget::openJpg()
 
 void MyGLWidget::openPLY()
 {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Importar modelo PLY"), "", tr("PLY Files (*.ply)"));
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Importar modelo PLY"), "./plys", tr("PLY Files (*.ply)"));
     controlador->importPLY(fileName.toStdString());
     updateGL();
 }
@@ -270,12 +270,12 @@ void MyGLWidget::revButton()
 
 void MyGLWidget::exportarImagen()
 {
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Exportar imagen PNG"), "", tr("PNG Files (*.png)"));
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Exportar imagen PNG"), "./images", tr("PNG Files (*.png)"));
     controlador->exportImage(fileName.toStdString());
 }
 
 void MyGLWidget::exportarModelo()
 {
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Exportar modeo PLY"), "", tr("PLY Files (*.ply)"));
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Exportar modeo PLY"), "./plys", tr("PLY Files (*.ply)"));
     controlador->exportPLY(fileName.toStdString());
 }
