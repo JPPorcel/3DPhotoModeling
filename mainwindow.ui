@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="MyGLWidget" name="myGLWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>0</y>
+      <width>512</width>
+      <height>512</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>512</width>
+      <height>512</height>
+     </size>
+    </property>
+    <property name="baseSize">
+     <size>
+      <width>512</width>
+      <height>512</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QWidget" name="leftPanel" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>160</width>
+      <height>520</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="yLabel">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>210</y>
+       <width>50</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>y</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cuboideButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>32</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Cuboide</string>
+     </property>
+     <property name="toolTipDuration">
+      <number>-1</number>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/icons/icons/cube.png</normaloff>:/icons/icons/cube.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="extraerTextura">
+     <property name="geometry">
+      <rect>
+       <x>78</x>
+       <y>10</y>
+       <width>32</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Recalcular textura</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/icons/icons/texture.png</normaloff>:/icons/icons/texture.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>22</width>
+       <height>22</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cilindroButton">
+     <property name="geometry">
+      <rect>
+       <x>44</x>
+       <y>10</y>
+       <width>32</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Cilindro</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/icons/icons/cylinder.png</normaloff>:/icons/icons/cylinder.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="xLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>210</y>
+       <width>50</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>x</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="esfera">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>32</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Esfera</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/icons/icons/sphere.png</normaloff>:/icons/icons/sphere.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="generarModelo">
+     <property name="geometry">
+      <rect>
+       <x>78</x>
+       <y>50</y>
+       <width>32</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Generar modelo</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/icons/icons/3d.png</normaloff>:/icons/icons/3d.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="seleccionar">
+     <property name="geometry">
+      <rect>
+       <x>44</x>
+       <y>50</y>
+       <width>32</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Seleccionar</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/icons/icons/select.png</normaloff>:/icons/icons/select.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>190</y>
+       <width>100</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Pixel</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignHCenter|Qt::AlignTop</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="bottomPanel" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>520</y>
+      <width>700</width>
+      <height>120</height>
+     </rect>
+    </property>
+    <widget class="QSlider" name="focalSlider">
+     <property name="geometry">
+      <rect>
+       <x>139</x>
+       <y>20</y>
+       <width>471</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>100</number>
+     </property>
+     <property name="maximum">
+      <number>3000</number>
+     </property>
+     <property name="value">
+      <number>760</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="focalLabel">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>20</y>
+       <width>50</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>760</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>110</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Distancia focal</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionOpen_jpg"/>
+    <addaction name="actionImportar_modelo"/>
+    <addaction name="actionExportar_imagen"/>
+    <addaction name="actionExportar_modelo"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Editar</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Herramientas</string>
+    </property>
+    <addaction name="actionCuboide"/>
+    <addaction name="actionCilindro"/>
+    <addaction name="actionEsfera"/>
+    <addaction name="actionGenerar_modelo"/>
+    <addaction name="actionExtraer_textura"/>
+    <addaction name="actionSeleccionar"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuTools"/>
+  </widget>
+  <action name="actionOpen_jpg">
+   <property name="text">
+    <string>Importar imagen</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Deshacer</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>Rehacer</string>
+   </property>
+  </action>
+  <action name="actionImportar_modelo">
+   <property name="text">
+    <string>Importar modelo</string>
+   </property>
+  </action>
+  <action name="actionCuboide">
+   <property name="text">
+    <string>Cuboide</string>
+   </property>
+  </action>
+  <action name="actionCilindro">
+   <property name="text">
+    <string>Cilindro</string>
+   </property>
+  </action>
+  <action name="actionEsfera">
+   <property name="text">
+    <string>Esfera</string>
+   </property>
+  </action>
+  <action name="actionGenerar_modelo">
+   <property name="text">
+    <string>Generar modelo</string>
+   </property>
+  </action>
+  <action name="actionExtraer_textura">
+   <property name="text">
+    <string>Extraer textura</string>
+   </property>
+  </action>
+  <action name="actionSeleccionar">
+   <property name="text">
+    <string>Seleccionar</string>
+   </property>
+  </action>
+  <action name="actionExportar_modelo">
+   <property name="text">
+    <string>Exportar modelo</string>
+   </property>
+  </action>
+  <action name="actionExportar_imagen">
+   <property name="text">
+    <string>Exportar imagen</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MyGLWidget</class>
+   <extends>QWidget</extends>
+   <header>myglwidget.h</header>
+   <container>1</container>
+   <slots>
+    <slot>setFov(int)</slot>
+    <slot>setFocal(int)</slot>
+    <slot>cuboideButton()</slot>
+    <slot>cilindroButton()</slot>
+    <slot>clearCV()</slot>
+    <slot>openJpg()</slot>
+    <slot>revButton()</slot>
+    <slot>esferaButton()</slot>
+    <slot>manualButton()</slot>
+    <slot>generarButton()</slot>
+    <slot>seleccionButton()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>cuboideButton</sender>
+   <signal>clicked()</signal>
+   <receiver>myGLWidget</receiver>
+   <slot>cuboideButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>41</x>
+     <y>66</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cilindroButton</sender>
+   <signal>clicked()</signal>
+   <receiver>myGLWidget</receiver>
+   <slot>cilindroButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>75</x>
+     <y>66</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>105</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>extraerTextura</sender>
+   <signal>clicked()</signal>
+   <receiver>myGLWidget</receiver>
+   <slot>manualButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>66</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>169</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>esfera</sender>
+   <signal>clicked()</signal>
+   <receiver>myGLWidget</receiver>
+   <slot>esferaButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>160</x>
+     <y>229</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>focalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>myGLWidget</receiver>
+   <slot>setFocal(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>365</x>
+     <y>593</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>393</x>
+     <y>505</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>generarModelo</sender>
+   <signal>clicked()</signal>
+   <receiver>myGLWidget</receiver>
+   <slot>generarButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>68</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>184</x>
+     <y>86</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>seleccionar</sender>
+   <signal>clicked()</signal>
+   <receiver>myGLWidget</receiver>
+   <slot>seleccionButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>96</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>cuboideButton()</slot>
+  <slot>cilindroButton()</slot>
+  <slot>updateXYLabel()</slot>
+ </slots>
+</ui>

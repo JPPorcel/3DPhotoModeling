@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/cube.png</file>
+        <file>icons/cylinder.png</file>
+        <file>icons/axis.png</file>
+        <file>icons/sphere.png</file>
+        <file>icons/3d.png</file>
+        <file>icons/select.png</file>
+        <file>icons/texture.png</file>
+    </qresource>
+</RCC>
